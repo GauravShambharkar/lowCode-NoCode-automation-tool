@@ -10,21 +10,23 @@ import {
 import "@xyflow/react/dist/style.css";
 import { useCallback, useRef, useState } from "react";
 
-const initialNodes = [
-  { id: "n1", position: { x: 0, y: 0 }, data: { label: "Node 1" } },
-  { id: "n2", position: { x: 0, y: 100 }, data: { label: "Node 2" } },
-];
-const initialEdges = [
-  {
-    id: "n1-n2",
-    source: "n1",
-    target: "n2",
-    type: "step",
-    // label: "connects with",
-  },
-];
-
 export default function App() {
+  const initialNodes = [
+    { id: "n1", position: { x: 0, y: 0 }, data: { label: "Node 1" } },
+    { id: "n2", position: { x: 0, y: 100 }, data: { label: "Node 2" } },
+  ];
+
+  const initialEdges = [
+    {
+      id: "n1-n2",
+      source: "n1",
+      target: "n2",
+      type: "step",
+      // label: "connects with",
+    },
+  ];
+
+  const [edgeType, setEdgeType] = useState();
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
 
@@ -46,12 +48,20 @@ export default function App() {
   );
 
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
-      <div className="">
+    <div style={{ width: "100vw", height: "100vh" }} className="relative p-2">
+      <div className=" flex flex-col absolute gap-3 top-4 left-4">
         <h1>Background Variants</h1>
-        <button onClick={() => setVariant("dots")}>Dots</button>
-        <button onClick={() => setVariant("lines")}>Lines</button>
-        <button onClick={() => setVariant("cros")}>Cross</button>
+        <div className="flex gap-3">
+          <button className="btn" onClick={() => setVariant("dots")}>
+            Dots
+          </button>
+          <button className="btn" onClick={() => setVariant("lines")}>
+            Lines
+          </button>
+          <button className="btn" onClick={() => setVariant("cros")}>
+            Cross
+          </button>
+        </div>
       </div>
       <ReactFlow
         nodes={nodes}

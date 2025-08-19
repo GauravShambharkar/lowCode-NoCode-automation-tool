@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -6,4 +8,8 @@
 
 body {
   overflow: hidden;
+}
+
+.btn{
+  @apply bg-black flex items-center text-white px-3 h-8 rounded-lg text-[14px]
 }
