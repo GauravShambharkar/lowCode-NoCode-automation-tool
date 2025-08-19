@@ -49,8 +49,8 @@ export default function App() {
 
   return (
     <div style={{ width: "100vw", height: "100vh" }} className="relative p-2">
-      <div className=" flex flex-col absolute gap-3 top-4 left-4">
-        <h1>Background Variants</h1>
+      <div className=" flex flex-col absolute z-10 gap-2 top-4 left-4 border border-[#d0d0d0] p-4 rounded-lg bg-[#ffffff28] backdrop-blur-md shadow-2xl ">
+        <h1 className="font-medium">Background Variants</h1>
         <div className="flex gap-3">
           <button className="btn" onClick={() => setVariant("dots")}>
             Dots
@@ -58,8 +58,8 @@ export default function App() {
           <button className="btn" onClick={() => setVariant("lines")}>
             Lines
           </button>
-          <button className="btn" onClick={() => setVariant("cros")}>
-            Cross
+          <button className="btn" onClick={() => setVariant("blank")}>
+            Blank
           </button>
         </div>
       </div>
